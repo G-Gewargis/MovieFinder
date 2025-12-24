@@ -1,0 +1,54 @@
+/* Watchlist */
+.watchlist {
+  position: sticky;
+  top: 150px;
+  align-self: start;
+  background: var(--panel);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  padding: 1.5rem;
+  max-height: calc(100vh - 170px);
+  overflow-y: auto;
+}
+
+.watchlist-inner {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.watchlist-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.watchlist-count {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 24px;
+  height: 22px;
+  padding: 0 0.5rem;
+  border-radius: 12px;
+  background: var(--accent);
+  color: white;
+  font-size: 0.8rem;
+  font-weight: 700;
+}
+
+@media (max-width: 900px) {
+  .watchlist {
+    position: relative;
+    top: auto;
+    max-height: none;
+  }
+}
+
+@media (max-width: 615px) {
+  .watchlist {
+    padding: 1rem;
+  }
+}
+

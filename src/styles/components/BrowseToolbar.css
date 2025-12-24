@@ -1,0 +1,232 @@
+/* Browse Toolbar */
+.browse-toolbar {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  max-width: var(--container);
+  margin: 0 auto;
+  background: var(--bg);
+  padding: 1.5rem 2rem 0rem
+}
+
+.browse-toolbar-container {
+  max-width: var(--container);
+  margin: 0 auto;
+  background: var(--panel);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 1.25rem;
+  box-shadow: var(--shadow);
+}
+
+.browse-toolbar-inner {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.search-box {
+  flex: 1;
+  min-width: 200px;
+  display: flex;
+  align-items: center;
+  background: var(--panel);
+  border: 2px solid var(--border);
+  border-radius: var(--radius);
+  padding: 0.35rem 0.75rem;
+  gap: 0.5rem;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.search-box:focus-within {
+  border-color: var(--gold);
+  box-shadow: 0 0 0 3px rgba(255, 215, 0, 0.15);
+}
+
+.search-icon {
+  font-size: 1rem;
+  opacity: 0.6;
+}
+
+.search-box input {
+  flex: 1;
+  background: transparent;
+  border: none;
+  color: var(--text);
+  font-size: 0.95rem;
+  padding: 0.35rem 0;
+  outline: none;
+}
+
+.search-box input::placeholder {
+  color: var(--muted);
+}
+
+.search-clear {
+  width: 24px;
+  height: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--panel-light);
+  border: 1px solid var(--border);
+  border-radius: 50%;
+  color: var(--text-dim);
+  cursor: pointer;
+  transition: all 0.2s ease;
+  font-size: 0.75rem;
+}
+
+.search-clear:hover {
+  background: var(--accent);
+  border-color: var(--accent);
+  color: white;
+}
+
+.search-spinner {
+  width: 18px;
+  height: 18px;
+  border: 2px solid var(--border);
+  border-top-color: var(--gold);
+  border-radius: 50%;
+  animation: spin 0.8s linear infinite;
+}
+
+.genre-filter-row {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+}
+
+.genre-pills {
+  display: flex;
+  gap: 0.4rem;
+}
+
+.genre-pill {
+  border: 1px solid var(--border);
+  background: var(--panel);
+  color: var(--text-dim);
+  border-radius: 20px;
+  padding: 0.35rem 0.75rem;
+  font-size: 0.8rem;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.genre-pill:hover {
+  border-color: var(--text-dim);
+  color: var(--text);
+  background: var(--panel-light);
+}
+
+.genre-pill.active {
+  border-color: var(--accent);
+  background: var(--accent);
+  color: white;
+  font-weight: 600;
+}
+
+.genre-dropdown {
+  background: var(--panel);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  color: var(--text);
+  padding: 0.4rem 0.75rem;
+  font-size: 0.85rem;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  min-width: 140px;
+}
+
+.genre-dropdown:hover {
+  border-color: var(--border-light);
+}
+
+.genre-dropdown:focus {
+  outline: none;
+  border-color: var(--gold);
+  box-shadow: 0 0 0 2px rgba(255, 215, 0, 0.15);
+}
+
+.search-status {
+  margin-top: 0.75rem;
+  padding: 0.5rem 0.75rem;
+  background: var(--panel-light);
+  border-radius: var(--radius-sm);
+  color: var(--text-dim);
+  font-size: 0.85rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.search-status strong {
+  color: var(--gold);
+}
+
+.status-clear {
+  background: transparent;
+  border: none;
+  color: var(--accent);
+  cursor: pointer;
+  font-size: 0.85rem;
+  margin-left: 0.5rem;
+  text-decoration: underline;
+  padding: 0;
+}
+
+.status-clear:hover {
+  color: var(--accent-hover);
+}
+
+/* Mobile genre styles */
+.mobile-genres {
+  display: none;
+}
+
+.genre-dropdown-mobile {
+  width: 100%;
+  background: var(--panel);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  color: var(--text);
+  padding: 0.65rem 1rem;
+  font-size: 0.95rem;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.genre-dropdown-mobile:focus {
+  outline: none;
+  border-color: var(--gold);
+  box-shadow: 0 0 0 2px rgba(255, 215, 0, 0.15);
+}
+
+@media (max-width: 720px) {
+  .browse-toolbar-inner {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .search-row {
+    align-items: stretch;
+  }
+
+  .desktop-genres {
+    display: none;
+  }
+
+  .mobile-genres {
+    display: block;
+    width: 100%;
+  }
+
+  .browse-toolbar-container {
+    padding: 1rem;
+  }
+}
+
