@@ -1,5 +1,5 @@
 {
-  "name": "react-cse2004",
+  "name": "MovieFinder",
   "private": true,
   "version": "0.1.0",
   "type": "module",
@@ -7,7 +7,7 @@
     "dev": "vite",
     "start": "vite",
     "build": "vite build",
-    "predeploy": "vite build --base=/final-project-G-Gewargis/",
+    "predeploy": "vite build --base=/MovieFinder/",
     "deploy": "gh-pages -d dist",
     "lint": "eslint . --ext js,jsx --report-unused-disable-directives --max-warnings 0",
     "preview": "vite preview"
